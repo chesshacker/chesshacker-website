@@ -1,0 +1,15 @@
+runtime: go
+api_version: go1
+
+handlers:
+- url: /static
+  static_dir: frontend/build/static
+- url: /src
+  static_dir: frontend/src
+- url: /.*
+  script: _go_app
+
+skip_files:
+- ^(.*/)?\..*$
+- ^(.*/)?README.md$
+- ^(.*/)?^frontend/(?!build).*$
