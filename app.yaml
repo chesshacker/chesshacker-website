@@ -4,6 +4,9 @@ api_version: go1
 handlers:
 - url: /static
   static_dir: frontend/build/static
+- url: /favicon\.ico
+  static_files: frontend/build/favicon.ico
+  upload: frontend/build/favicon\.ico
 - url: /src
   static_dir: frontend/src
 - url: /.*
