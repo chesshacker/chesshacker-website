@@ -1,0 +1,35 @@
+div.row-with-vertical-alignment {
+  font-size: 0;
+}
+div.row-with-vertical-alignment > * {
+  float: none;
+  display: inline-block;
+  font-size: 14px;
+}
+div.row-with-vertical-alignment div.col-bottom {
+  vertical-align: bottom;
+}
+div.row-with-vertical-alignment div.col-middle {
+  vertical-align: middle;
+}
+div.row-with-vertical-alignment div.col-top {
+  vertical-align: top;
+}
+div.contrasting-container {
+  background-color: #f8f8f8;
+  border-style: solid;
+  border-color: #77777b;
+  border-width: 1px 0 1px 0;
+}
+div.navbar-header {
+  background-image: url("https://photos.smugmug.com/photos/i-5S8vpnM/0/O/i-5S8vpnM.png");
+  background-repeat: no-repeat;
+  background-position: 0 1px;
+}
+div.navbar-header a.navbar-brand {
+  margin-left: 40px !important;
+}
+.testimonial-lead {
+  font-style: italic;
+  font-weight: bold;
+}
