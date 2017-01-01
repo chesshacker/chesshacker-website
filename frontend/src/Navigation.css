@@ -1,0 +1,8 @@
+div.navbar-header {
+  background-image: url("https://photos.smugmug.com/photos/i-5S8vpnM/0/O/i-5S8vpnM.png");
+  background-repeat: no-repeat;
+  background-position: 0 1px;
+}
+div.navbar-header a.navbar-brand {
+  margin-left: 40px !important;
+}

@@ -1,0 +1,20 @@
+/*
+   sticky footer implementation:
+   http://stackoverflow.com/questions/10099422/flushing-footer-to-bottom-of-the-page-twitter-bootstrap
+ */
+html, body, #root, #page {
+  height: 100%;
+}
+#everything-except-footer-wrap { /* was wrap */
+  min-height: 100%;
+}
+#everything-except-footer {
+  overflow:auto;
+  padding-bottom: 50px; /* this needs to be bigger than footer height*/
+}
+footer {
+  position: relative;
+  margin-top: -50px; /* negative value of footer height */
+  height: 50px;
+  clear:both;
+}
