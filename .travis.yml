@@ -1,0 +1,26 @@
+language: go
+go:
+- 1.7.x
+env:
+  global:
+  - PATH="${HOME}/go_appengine:${PATH}"
+  - SRC="${HOME}/gopath/src/github.com/chesshacker/chesshacker-website"
+  - secure: CFXjaLdtWcOKYqVPQU8Vl6aoQGYm7lHi/0NkVxwRH9tDHOd4btvIC/V4/tRfNHrj68l3DmThwluQa3wky+q60gkk16O+qW+d+I+sRWoIabkHqVj2SL8qrt+eng2Zn+WEIykeISn8eo8fjcLOUAAveNEP5NZ/LEfEuKSh7WXTxIQ+EjtEfruVxxqkxzonszkVqplKWMFoovyNRaNQ7kcBlBhQoRX/yhCFpjWEWgGJxHAC+r/AuxInco68Ll/kwDuf/xLCzQoreLiAvaFp556yV/PEI50jlbrMJehzy3CtTCecAcGw8oimeK4NcpzW9B07DH7kbWEVsjvY/nvD1ebjrHaAfkFFukBOeqbqbhWWNIKWmOks5JS6M/n++X4q+dYmGDRwJtiwbLmiCHp9YcxZ/gWMG/lKgb459edrvtwYkZ+FyLiGzXHJwZ5WQHFCKEyPLx8DznXI1ZmL+fhzvnb/27eGnVF1WQNE9T2VvuqFJx/fZtS7VTrgVto37oGV4/GzQJviCwDVE/1G4c6+2ZmZj5pXPNjs7kPpbAOW8z0to1anxFIOBOa1dyLceQEQeBucVRBpvlRTFXHc/mY+/IPa0OUwdXnIW5r9ziJYURI0zQO/GDnVoaP0PGsfiJ2SSPA0ZUQU0e+bAVmS4BvyAaRAdbou9tUMm5duYlJ1DaG3rtw=
+cache:
+  directories:
+  - ${HOME}/go_appengine
+  - ${SRC}/frontend/node_modules
+before_install:
+- if [ ! -e "$HOME/go_appengine/goapp" ]; then (cd $HOME && rm -rf go_appengine &&
+  wget https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.48.zip
+  && unzip -q go_appengine_sdk_linux_amd64-1.9.48.zip); fi
+- goapp version
+- scripts/decrypt
+- nvm install 6
+- (cd frontend && npm install)
+- (cd frontend && npm run build)
+install:
+- go get -v ./...
+script:
+- appcfg.py -A chesshacker-primary -V v1 --oauth2_refresh_token=$(cat secure/oauth2_refresh_token)
+  --verbose update .

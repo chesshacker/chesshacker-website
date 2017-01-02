@@ -15,4 +15,6 @@ handlers:
 skip_files:
 - ^(.*/)?\..*$
 - ^(.*/)?README.md$
-- ^(.*/)?^frontend/(?!build).*$
+- ^frontend/(?!build).*$
+- ^scripts
+- ^secure
