@@ -9,9 +9,9 @@ class About extends Component {
           <Row className="row-with-vertical-alignment">
             <Col md={8}>
               <h2>About</h2>
-                <p className="lead">I am a senior software developer who enjoys teaching others, building teams, and solving interesting problems with well-crafted software.</p>
-                <p>I still enjoy writing code, but I am most happy and effective when I am enabling my team to succeed and improve. I love to start with an inspiring mission, to work together as a team to come up with ideas, and finally to make those ideas a reality.</p>
-                <p>My pseudonym, <strong>chesshacker</strong>, comes from two of my favorite activities, playing chess and developing software. I also enjoy teaching chess, and frequently volunteer in the community. For fun, I like to combine these passions and write chess-related software programs, some of which are featured on this site.</p>
+              <p className="lead">I am a senior software developer who enjoys teaching others, building teams, and solving interesting problems with well-crafted software.</p>
+              <p>I still enjoy writing code, but I am most happy and effective when I am enabling my team to succeed and improve. I love to start with an inspiring mission, to work together as a team to come up with ideas, and finally to make those ideas a reality.</p>
+              <p>My pseudonym, <strong>chesshacker</strong>, comes from two of my favorite activities, playing chess and developing software. I also enjoy teaching chess, and frequently volunteer in the community. For fun, I like to combine these passions and write chess-related software programs, some of which are featured on this site.</p>
             </Col>
             <Col md={4} className="col-bottom text-center">
               <Image src="https://photos.smugmug.com/photos/i-QRdxvrc/0/S/i-QRdxvrc-S.jpg" />

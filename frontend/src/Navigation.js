@@ -18,6 +18,9 @@ class Navigation extends Component {
             <LinkContainer to={{ pathname: '/about' }}>
               <NavItem>About</NavItem>
             </LinkContainer>
+            <LinkContainer to={{ pathname: '/projects' }}>
+              <NavItem>Projects</NavItem>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
